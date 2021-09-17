@@ -76,3 +76,7 @@ Route::get( "/newgallery/ant" , [ MyProfileController::class , "ant" ] );
 Route::post("/covid19",[ Covid19Controller::class , "store" ]);
 Route::patch("/covid19/{id}", [ Covid19Controller::class , "update" ]);
 Route::get( "/coronavirus" ,[ MyProfileController::class , "coronavirus" ] );
+
+use App\Http\Controllers\Covid19Controller;
+Route::get('/covid19', [ Covid19Controller::class,"index" ]);
+
