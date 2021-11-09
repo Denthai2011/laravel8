@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 
 Route::get("/homepage", function() {
     return "<h1>This is home page</h1>" ;
@@ -53,14 +58,14 @@ Route::get( "/gallery/ant" , function(){
     $ant = "https://cdn3.movieweb.com/i/article/Oi0Q2edcVVhs4p1UivwyyseezFkHsq/1107:50/Ant-Man-3-Talks-Michael-Douglas-Update.jpg";
 return view("test/ant", compact("ant"));
 });
-Route::get("/teacher" , function (){
+
+Route::get("/te cher" , function (){
 	return view("teacher");
 });
 
 Route::get("/student" , function (){
 	return view("student");
 });
-
 Route::get('/table', function () {
     return view('table');
 });
